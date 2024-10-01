@@ -1,0 +1,131 @@
+/* Body styling */
+body {
+    background-color: #0000AA; /* Default background color */
+    color: #FFFFFF; /* Default text color */
+    font-family: 'Lucida Console', Monaco, monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Navbar styling for social icons */
+nav ul {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li img:hover {
+    transform: scale(1.2);
+}
+
+/* BSOD styling */
+.bsod {
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+h1 {
+    background-color: #C0C0C0;
+    color: #000000;
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.error-code, .prompt {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.prompt {
+    margin-top: 40px;
+}
+
+/* Popup section */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff00;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 0.5s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.popup img {
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Title styling */
+.title-image {
+    width: 600px; /* Adjust as needed */
+    max-width: 400px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the title image */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -60%);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Visibility for popup */
+.popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hidden class to make popup initially hidden */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Background image for BSOD when triggered */
+body.bg-image {
+    background-image: url('images/BLUE\ SCREEN\ OF\ SOLANA.gif'); /* Change this to your image */
+    background-size: cover; /* Make the image cover the entire screen */
+    background-position: center; /* Center the image */
+}
